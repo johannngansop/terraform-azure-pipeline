@@ -1,11 +1,21 @@
-variable "resource_group_name" {
-  description = "Nom du groupe de ressources à créer dans Azure"
+variable "ARM_CLIENT_ID" {
+  description = "Azure client ID"
   type        = string
-  default     = "rg-terraform-test"
+  sensitive   = true
 }
 
-variable "location" {
-  description = "Région Azure où créer les ressources"
+variable "ARM_CLIENT_SECRET" {
+  description = "Azure client secret"
   type        = string
-  default     = "East US"
+  sensitive   = true
+}
+
+variable "ARM_SUBSCRIPTION_ID" {
+  description = "Azure subscription ID"
+  type        = string
+}
+
+variable "ARM_TENANT_ID" {
+  description = "Azure tenant ID"
+  type        = string
 }
