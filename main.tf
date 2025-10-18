@@ -7,9 +7,9 @@ terraform {
   }
 
   cloud {
-    organization = "Johann_project"  # ton nom d'organisation Terraform Cloud
+    organization = "Johann_project" 
     workspaces {
-      name = "terraform-azure-pipeline"  # ton workspace Terraform Cloud
+      name = "terraform-azure-pipeline" 
     }
   }
 }
