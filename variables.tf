@@ -32,7 +32,6 @@ variable "tags" {
   default     = {}
 }
 
-# (déjà utilisés par network.tf)
 variable "vnet_name" {
   description = "Virtual network name"
   type        = string
