@@ -80,14 +80,14 @@ variable "container_name" {
 }
 
 variable "container_image" {
-  description = "Image Docker publique ou privée"
   type        = string
+  description = "Docker image"
   default     = "nginx:latest"
 }
 
 variable "container_port" {
-  description = "Port exposé par le container"
   type        = number
+  description = "Container port to expose"
   default     = 80
 }
 
@@ -103,10 +103,9 @@ variable "container_memory" {
   default     = 1.5
 }
 
-variable "dns_name_label" {
-  description = "Label DNS public (unique globalement)"
+variable "dns_label" {
   type        = string
-  default     = "cont-johann-aci" # change si déjà pris
+  description = "Globally-unique DNS label for the ACI (subdomain)"
 }
 
 variable "container_env" {
