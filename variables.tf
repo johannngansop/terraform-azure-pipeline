@@ -1,3 +1,9 @@
+variable "project" {
+  description = "Nom du projet ou préfixe pour les ressources"
+  type        = string
+  default     = "terraform-azure"
+}
+
 variable "ARM_CLIENT_ID" {
   description = "Azure client ID"
   type        = string
