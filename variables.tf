@@ -109,9 +109,9 @@ variable "container_memory" {
   default     = 1.5
 }
 
-variable "dns_label" {
+variable "dns_name_label" {
+  description = "DNS label (unique) pour le container ACI"
   type        = string
-  description = "Globally-unique DNS label for the ACI (subdomain)"
 }
 
 variable "container_env" {
