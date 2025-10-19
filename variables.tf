@@ -73,3 +73,45 @@ variable "subnets" {
   description = "Map of subnet name => CIDR"
   type        = map(string)
 }
+variable "container_name" {
+  description = "Nom du container / du groupe ACI"
+  type        = string
+  default     = "cont-johann"
+}
+
+variable "container_image" {
+  description = "Image Docker publique ou privée"
+  type        = string
+  default     = "nginx:latest"
+}
+
+variable "container_port" {
+  description = "Port exposé par le container"
+  type        = number
+  default     = 80
+}
+
+variable "container_cpu" {
+  description = "CPU pour le container"
+  type        = number
+  default     = 1
+}
+
+variable "container_memory" {
+  description = "Mémoire (GB) pour le container"
+  type        = number
+  default     = 1.5
+}
+
+variable "dns_name_label" {
+  description = "Label DNS public (unique globalement)"
+  type        = string
+  default     = "cont-johann-aci" # change si déjà pris
+}
+
+variable "container_env" {
+  description = "Variables d'environnement du container"
+  type        = map(string)
+  default     = {}
+}
+
