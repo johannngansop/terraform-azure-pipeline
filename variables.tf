@@ -19,23 +19,31 @@ variable "ARM_TENANT_ID" {
   description = "Azure tenant ID"
   type        = string
 }
-variable "vnet_name" {
-  description = "Nom du VNet"
+
+variable "location" {
+  description = "Azure region"
   type        = string
-  default     = "vnet-terraform"
+}
+
+# Tags appliqués aux ressources
+variable "tags" {
+  description = "Common tags"
+  type        = map(string)
+  default     = {}
+}
+
+# (déjà utilisés par network.tf)
+variable "vnet_name" {
+  description = "Virtual network name"
+  type        = string
 }
 
 variable "vnet_address_space" {
-  description = "Address space du VNet"
+  description = "VNet address space"
   type        = list(string)
-  default     = ["10.10.0.0/16"]
 }
 
 variable "subnets" {
-  description = "Subnets du VNet (nom => CIDR)"
+  description = "Map of subnet name => CIDR"
   type        = map(string)
-  default = {
-    "snet-web" = "10.10.1.0/24"
-    "snet-app" = "10.10.2.0/24"
-  }
 }
